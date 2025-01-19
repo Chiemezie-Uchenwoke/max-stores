@@ -1,0 +1,17 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nunito", serif;
+}
+
+:root{
+  --pri-color: #ff4e72;
+  --sec-color: #99e763;
+  --white-color: #f6f6f6;
+  --shade-of-black: #1a1a1a;
+}
+
+body{
+  background-color: var(--white-color);
+}

@@ -1,0 +1,131 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Nunito", serif;
+  }
+  
+  :root{
+    --pri-color: #ff4e72;
+    --sec-color: #99e763;
+    --white-color: #f6f6f6;
+    --shade-of-black: #1a1a1a;
+  }
+  
+  body{
+    background-color: var(--white-color);
+  }
+
+  header{
+    background-color: var(--sec-color);
+    overflow: hidden;
+    height: 2.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+  }
+
+  header p{
+    margin: 0;
+    font-size: 0.8rem;
+    /* padding: 0.5rem; */
+    text-transform: capitalize;
+    letter-spacing: 0.3px;
+    font-weight: 500;
+    animation: come-up 3s infinite;
+  }
+
+  @keyframes come-up{
+    0% {
+        transform: translateY(200%);
+      }
+      
+      15%, 80% {
+        transform: translateY(0);
+      }
+    
+      100% {
+        transform: translateY(200%);
+      }
+  }
+
+  nav{
+    margin: 0;
+    border-bottom: 1px solid rgba(26, 26, 26, 0.2);
+    background-color: var(--white-color);
+    height: 4.5rem;
+    position: sticky;
+    top: 0;
+  }
+
+  nav > div{
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+  }
+
+  nav img{
+    width: 7rem;
+    height: auto;
+  }
+
+  .nav-links{
+    display: none;
+  }
+
+ 
+
+
+
+
+  @media (min-width: 1000px){
+    .mobile{
+        display: none;
+    }
+
+    .nav-links{
+        display: flex;
+        gap: 2rem;
+    }
+
+    .nav-links a{
+        color: var(--shade-of-black);
+        text-transform: capitalize;
+        font-size: 1.15rem;
+        font-weight: 800;
+    }
+
+    .nav-links a:hover{
+        color: var(--pri-color);
+        text-decoration: underline;
+    }
+
+    .nav-links button{
+        all: unset;
+        position: relative;
+        cursor: pointer;
+    }
+
+    .nav-links .cart-icon{
+        font-size: 1.6rem;
+    }
+
+    .cart-value{
+        position: absolute;
+        right: -0.6rem;
+        top: -1rem;
+        font-size: 0.6rem;
+        background-color: var(--pri-color);
+        width: 1.2rem;
+        height: 1.2rem;
+        border-radius: 50%;
+        color: var(--white-color);
+        font-weight: 500;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+  }
