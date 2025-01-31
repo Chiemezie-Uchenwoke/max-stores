@@ -1,5 +1,5 @@
 import "./Header.css";
-import logo from "../../assets/logo.png"
+import Logo from "../Logo";
 import { HiOutlineShoppingCart } from "react-icons/hi2";
 import { IoMdMenu } from "react-icons/io";
 import { useState, useEffect } from "react";
@@ -46,7 +46,7 @@ const Header = () => {
             <nav>
                 <div className="container">
                     <a href="./index.html">
-                        <img src={logo} alt="logo" />
+                        <Logo />
                     </a>
 
                     <div className="nav-links">
