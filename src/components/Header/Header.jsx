@@ -1,5 +1,5 @@
 import "./Header.css";
-import Logo from "../Logo";
+import Logo from "../Logo/Logo";
 import { HiOutlineShoppingCart } from "react-icons/hi2";
 import { IoMdMenu } from "react-icons/io";
 import { useState, useEffect } from "react";
