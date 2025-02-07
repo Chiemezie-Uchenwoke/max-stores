@@ -1,5 +1,6 @@
 import products from "../products";
 import ProductCard from "../ProductCard/ProductCard";
+import "./ProductGallery.css"
 
 const ProductGallery = () => {
     return(

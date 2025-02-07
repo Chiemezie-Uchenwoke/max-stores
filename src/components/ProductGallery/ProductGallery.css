@@ -1,2 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Nunito", serif;
+  }
 
+:root{
+    --pri-color: #ff4e72;
+    --sec-color: #99e763;
+    --white-color: #f6f6f6;
+    --shade-of-black: #1a1a1a;
+  }
 
+.product__grid__container{
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 2rem;
+}
+
+@media (min-width: 600px){
+    .product__grid__container{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 768px){
+    .product__grid__container{
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (min-width: 1000px){
+    .product__grid__container{
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
