@@ -23,6 +23,11 @@
     gap: 0.5rem;
 }
 
+.product__name{
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
 .product-description  span{
     display: flex;
     align-items: center;

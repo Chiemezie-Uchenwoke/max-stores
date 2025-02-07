@@ -9,7 +9,7 @@ const ProductCard = (props) => {
                 <img src={props.src} alt={props.alt} />
             </div>
             <div className="product-description">
-                <label htmlFor="product-name">{props.name}</label>
+                <label htmlFor="product-name" className='product__name'>{props.name}</label>
                 <span>
                     <label htmlFor="price" className="price">${props.price}</label>
                     <button><BsCartPlus className="icon" /></button>
