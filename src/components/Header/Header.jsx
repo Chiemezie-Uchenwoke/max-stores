@@ -18,14 +18,13 @@ const Header = () => {
  */
     const handleToggle = () => {
         if (toggler) {
-            // Start the remove animation when closing
             document.querySelector(".mobile_dropdown").classList.add("remove-roll");
             setTimeout(() => {
-                setToggler(!toggler); // After animation finishes, hide the menu
+                setToggler(!toggler); 
                 document.querySelector(".mobile_dropdown").classList.remove("remove-roll");
-            }, 1000); // Delay should match the animation duration
+            }, 1000); 
         } else {
-            setToggler(!toggler); // Show the menu and trigger the open animation
+            setToggler(!toggler); 
         }
     }
 

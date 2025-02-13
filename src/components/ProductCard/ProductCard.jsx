@@ -2,16 +2,16 @@ import PropTypes from 'prop-types';
 import { BsCartPlus } from "react-icons/bs";
 import "./ProductCard.css"
 
-const ProductCard = (props) => {
+const ProductCard = ({src, alt, name, price}) => {
     return(
         <div className="product__card">
             <div className="product-img">
-                <img src={props.src} alt={props.alt} />
+                <img src={src} alt={alt} />
             </div>
             <div className="product-description">
-                <label htmlFor="product-name" className='product__name'>{props.name}</label>
+                <label htmlFor="product-name" className='product__name'>{name}</label>
                 <span>
-                    <label htmlFor="price" className="price">${props.price}</label>
+                    <label htmlFor="price" className="price">${price}</label>
                     <button><BsCartPlus className="icon" /></button>
                 </span>
             </div>
