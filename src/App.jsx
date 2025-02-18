@@ -4,7 +4,6 @@ import './App.css'
 import ProductGallery from './components/ProductGallery/ProductGallery'
 
 function App() {
-  // const [count, setCount] = useState(0)
 
   return (
     <>
