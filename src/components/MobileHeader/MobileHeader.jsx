@@ -2,9 +2,13 @@ import { useState } from "react";
 import { HiOutlineShoppingCart } from "react-icons/hi2";
 import { IoMdMenu } from "react-icons/io";
 import { MdOutlineClose } from "react-icons/md";
+import { CartContext } from '../../context/CartContext';
+import { useContext } from 'react';
 
 const MobileHeader = () => {
     const [toggler, setToggler] = useState(false);
+
+    const {cartCount} = useContext(CartContext);
 
     const handleToggle = () => {
         if (toggler) {
@@ -33,7 +37,7 @@ const MobileHeader = () => {
                 </a>
                 <button>
                   <HiOutlineShoppingCart className="cart-icon" />
-                  <span className="cart-value">0</span>
+                  <span className="cart-value">{cartCount}</span>
                 </button>
                 <a href="">sign in</a>
               </div>

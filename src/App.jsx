@@ -2,6 +2,7 @@
 import Header from './components/Header/Header'
 import './App.css'
 import ProductGallery from './components/ProductGallery/ProductGallery'
+// import CartProvider from './context/CartContext'
 
 function App() {
 
