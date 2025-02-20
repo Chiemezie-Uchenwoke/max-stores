@@ -23,142 +23,142 @@ const products = [
     { 
         id: 1, 
         src: product1, 
-        alt: "Female Wear", 
-        name: "Female Wear", 
-        price: 58.3 
+        alt: "Smart TV", 
+        name: "Smart TV", 
+        price: 150.0
     },
     { 
         id: 2, 
         src: product2, 
-        alt: "Male Shirt", 
-        name: "Male Shirt", 
-        price: 45.0 
+        alt: "Blender", 
+        name: "Blender", 
+        price: 18.0 
     },
     { 
         id: 3, 
         src: product3, 
-        alt: "Smart Watch", 
-        name: "Smart Watch", 
+        alt: "Fridge", 
+        name: "Fridge", 
         price: 120.0 
     },
     { 
         id: 4, 
         src: product4, 
-        alt: "Smart Watch", 
-        name: "Smart Watch", 
-        price: 120.0 
+        alt: "Female Shirts", 
+        name: "Female Shirts", 
+        price: 18.0 
     },
     { 
         id: 5, 
         src: product5, 
-        alt: "Smart Watch", 
-        name: "Smart Watch", 
-        price: 120.0 
+        alt: "Hand Bag", 
+        name: "Hand Bag", 
+        price: 35.0 
     },
     { 
         id: 6, 
         src: product6, 
-        alt: "Smart Watch", 
-        name: "Smart Watch", 
-        price: 120.0 
+        alt: "Female Wear", 
+        name: "Female Wear", 
+        price: 45.3 
     },
     { 
         id: 7, 
         src: product7, 
-        alt: "Smart Watch", 
-        name: "Smart Watch", 
-        price: 120.0 
+        alt: "Female Watch", 
+        name: "Female Watch", 
+        price: 25.0 
     },
     { 
         id: 8, 
         src: product8, 
-        alt: "Smart Watch", 
-        name: "Smart Watch", 
-        price: 120.0 
+        alt: "Gift Set", 
+        name: "Gift Set", 
+        price: 250.5 
     },
     { 
         id: 9, 
         src: product9, 
-        alt: "Smart Watch", 
-        name: "Smart Watch", 
-        price: 120.0 
+        alt: "Smart TV", 
+        name: "Smart TV", 
+        price: 150.0 
     },
     { 
         id: 10, 
         src: product10, 
-        alt: "Smart Watch", 
-        name: "Smart Watch", 
-        price: 120.0 
+        alt: "Hand Bag", 
+        name: "Hand Bag", 
+        price: 20.0 
     },
     { 
         id: 11, 
         src: product11, 
-        alt: "Smart Watch", 
-        name: "Smart Watch", 
-        price: 120.0 
+        alt: "Hand Bag", 
+        name: "Hand Bag", 
+        price: 30.0 
     },
     { 
         id: 12, 
         src: product12, 
-        alt: "Smart Watch", 
-        name: "Smart Watch", 
-        price: 120.0 
+        alt: "PS 5", 
+        name: "PS 5", 
+        price: 50.0 
     },
     { 
         id: 13, 
         src: product13, 
-        alt: "Smart Watch", 
-        name: "Smart Watch", 
-        price: 120.0 
+        alt: "Hand Bag", 
+        name: "Hand Bag", 
+        price: 43.0 
     },
     { 
         id: 14, 
         src: product14, 
-        alt: "Smart Watch", 
-        name: "Smart Watch", 
-        price: 120.0 
+        alt: "Laptop Bag", 
+        name: "Laptop Bag", 
+        price: 28.0 
     },
     { 
         id: 15, 
         src: product15, 
-        alt: "Smart Watch", 
-        name: "Smart Watch", 
-        price: 120.0 
+        alt: "Piano", 
+        name: "Piano", 
+        price: 200.0 
     },
     { 
         id: 16, 
         src: product16, 
-        alt: "Smart Watch", 
-        name: "Smart Watch", 
-        price: 120.0 
+        alt: "Smart TV", 
+        name: "Smart TV", 
+        price: 350.0 
     },
     { 
         id: 17, 
         src: product17, 
         alt: "Smart Watch", 
         name: "Smart Watch", 
-        price: 120.0 
+        price: 85.0 
     },
     { 
         id: 18, 
         src: product18, 
-        alt: "Smart Watch", 
-        name: "Smart Watch", 
-        price: 120.0 
+        alt: "Kid Wear", 
+        name: "Kid Wear", 
+        price: 10.0 
     },
     { 
         id: 19, 
         src: product19, 
-        alt: "Smart Watch", 
-        name: "Smart Watch", 
-        price: 120.0 
+        alt: "Kid Wear", 
+        name: "Kid Wear", 
+        price: 10.0 
     },
     { 
         id: 20, 
         src: product20, 
-        alt: "Smart Watch", 
-        name: "Smart Watch", 
-        price: 120.0 
+        alt: "Sneakers", 
+        name: "Sneakers", 
+        price: 15.0 
     }
 ];
 
