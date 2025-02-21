@@ -1,0 +1,42 @@
+:root{
+    --pri-color: #ff4e72;
+    --sec-color: #99e763;
+    --white-color: #f6f6f6;
+    --shade-of-black: #1a1a1a;
+  }
+
+footer{
+    background-color: var(--shade-of-black);
+    padding: 3rem 0;
+}
+
+footer img{
+    width: 6rem;
+}
+
+footer p{
+    color: var(--white-color);
+    filter: brightness(0.7);
+    font-size: 0.8rem;
+    text-transform: capitalize;
+    transition: 0.3s;
+}
+
+footer p:hover{
+    filter: brightness(0.85);
+    transition: 0.3s;
+}
+
+footer > div{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (min-width: 600px){
+    footer p{
+        font-size: 0.9rem;
+    }
+}
