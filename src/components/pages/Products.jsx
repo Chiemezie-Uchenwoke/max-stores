@@ -1,6 +1,10 @@
+import Header from "../Header/Header";
+
 const Products = () => {
     return(
-        <h1>This is the Products Page</h1>
+        <>
+            <Header />
+        </>
     )
 }
 export default Products;
