@@ -1,6 +1,6 @@
 // import { useState } from 'react'
 import './App.css';
-import HomePage from "./components/pages/Homepage";
+import HomePage from "./components/pages/HomePage";
 import Products from './components/pages/Products';
 import Cart from "./components/pages/Cart";
 import SignIn from "./components/pages/SignIn";
