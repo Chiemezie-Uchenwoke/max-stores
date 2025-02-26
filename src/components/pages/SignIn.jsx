@@ -1,6 +1,10 @@
+import Header from "../Header/Header";
+
 const SignIn = () => {
     return(
-        <h1>This is the Login Page</h1>
+        <>
+            <Header />
+        </>
     )
 }
 export default SignIn;
