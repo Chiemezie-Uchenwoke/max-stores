@@ -33,12 +33,10 @@ const MobileHeader = () => {
 
               <div className="dropdown-links">
                   <Link className="nav-item" to="/">home</Link>
-                  <Link to="/products" className="nav-item">
-                    products
-                  </Link>
+                  <Link to="/products" className="nav-item">products</Link>
                   <Link to="/cart" className="cart-button">
-                    <HiOutlineShoppingCart className="cart-icon" />
-                    <span className="cart-value">{cartCount}</span>
+                      <HiOutlineShoppingCart className="cart-icon" />
+                      <span className="cart-value">{cartCount}</span>
                   </Link>
                   <Link to="/signin" className="nav-item">sign in</Link>
               </div>
