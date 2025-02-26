@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import MobileHeader from "../MobileHeader/MobileHeader";
 import { CartContext } from '../../context/CartContext';
 import { useContext } from 'react';
+import { Link } from "react-router-dom";
 
 const todayDate = new Date().toString().slice(0, 15);
 const topText = ["Premium products at affordable prices", `today is ${todayDate}`];
@@ -34,13 +35,15 @@ const DesktopHeader = () => {
                     </a>
 
                     <div className="nav-links">
-                        <a href="#">home</a>
-                        <a href="#">products</a>
-                        <button>
-                            <HiOutlineShoppingCart className="cart-icon" />
-                            <span className="cart-value">{cartCount}</span>
-                        </button>
-                        <a href="">sign in</a>
+                        <Link className="nav-item" to="/">home</Link>
+                        <Link to="/products" className="nav-item">
+                        products
+                        </Link>
+                        <Link to="/cart" className="cart-button">
+                        <HiOutlineShoppingCart className="cart-icon" />
+                        <span className="cart-value">{cartCount}</span>
+                        </Link>
+                        <Link to="/signin" className="nav-item">sign in</Link>
                     </div>
 
                     <MobileHeader />

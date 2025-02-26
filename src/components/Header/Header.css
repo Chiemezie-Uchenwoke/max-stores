@@ -135,7 +135,7 @@
   font-weight: 800;
  }
 
- .dropdown-links button{
+ .dropdown-links .cart-button{
   all: unset;
   position: relative;
   cursor: pointer;
@@ -191,7 +191,7 @@
         text-decoration: underline;
     }
 
-    .nav-links button{
+    .nav-links .cart-button{
         all: unset;
         position: relative;
         cursor: pointer;

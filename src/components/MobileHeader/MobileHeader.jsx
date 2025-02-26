@@ -4,6 +4,7 @@ import { IoMdMenu } from "react-icons/io";
 import { MdOutlineClose } from "react-icons/md";
 import { CartContext } from '../../context/CartContext';
 import { useContext } from 'react';
+import { Link } from "react-router-dom";
 
 const MobileHeader = () => {
     const [toggler, setToggler] = useState(false);
@@ -31,15 +32,15 @@ const MobileHeader = () => {
               <MdOutlineClose className="close-icon" onClick={handleToggle} />
 
               <div className="dropdown-links">
-                <a href="#">home</a>
-                <a href="#" className="pdt">
-                  products
-                </a>
-                <button>
-                  <HiOutlineShoppingCart className="cart-icon" />
-                  <span className="cart-value">{cartCount}</span>
-                </button>
-                <a href="">sign in</a>
+                  <Link className="nav-item" to="/">home</Link>
+                  <Link to="/products" className="nav-item">
+                    products
+                  </Link>
+                  <Link to="/cart" className="cart-button">
+                    <HiOutlineShoppingCart className="cart-icon" />
+                    <span className="cart-value">{cartCount}</span>
+                  </Link>
+                  <Link to="/signin" className="nav-item">sign in</Link>
               </div>
             </div>
           </div>
