@@ -1,5 +1,5 @@
 footer{
-    background-color: var(--deep-dark);
+    background-color: var(--shade-of-black);
     padding: 3rem 0;
 }
 
@@ -9,7 +9,7 @@ footer img{
 
 footer p{
     color: var(--white-color);
-    filter: brightness(0.7);
+    filter: brightness(0.8);
     font-size: 0.8rem;
     text-transform: capitalize;
     transition: 0.3s;
