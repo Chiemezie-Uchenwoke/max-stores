@@ -4,7 +4,7 @@ import "./ProductGallery.css"
 
 const ProductGallery = () => {
     return(
-        <div className="product__grid__container container">
+        <div className="product__grid__container container top-margin">
             {products.map((product) => (
                 <ProductCard 
                     key={product.id} 
