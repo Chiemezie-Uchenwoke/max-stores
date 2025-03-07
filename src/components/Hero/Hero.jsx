@@ -12,7 +12,7 @@ const Hero = () => {
                 <div className="hero-description">
                     <div>
                         <p>save up <span className="col">30%</span> off</p>
-                        <h1>providing the best at an affordable rate</h1>
+                        <h1>premium quality at an affordable rate</h1>
                     </div>
                     <Link to="/products" className="shop-now">
                         Shop Now <MdKeyboardDoubleArrowRight className="arrow-right" />

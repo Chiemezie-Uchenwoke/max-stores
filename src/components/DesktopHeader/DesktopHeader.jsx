@@ -7,7 +7,7 @@ import { useContext } from 'react';
 import { Link } from "react-router-dom";
 
 const todayDate = new Date().toString().slice(0, 15);
-const topText = ["Premium products at affordable prices", `today is ${todayDate}`];
+const topText = ["Welcome to max stores - we provide you the best", "Premium products at affordable prices", `today is ${todayDate}`];
 
 const DesktopHeader = () => {
 
