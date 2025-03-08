@@ -39,7 +39,7 @@
 .offers__inner > div:hover{
     box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.2);
     cursor: pointer;
-    scale: 1.05;
+    scale: 1.04;
 }
 
 .offers__inner h3{
