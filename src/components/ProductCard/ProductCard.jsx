@@ -11,7 +11,7 @@ const ProductCard = ({ src, alt, name, price }) => {
 
     const updateCart = () => {
         setCartCount(prevCount => prevCount + 1);
-        setIsAdded(true); // Disable button after first click
+        setIsAdded(true); 
     };
 
     return (
