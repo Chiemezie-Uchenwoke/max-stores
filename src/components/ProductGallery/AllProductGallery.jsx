@@ -2,10 +2,10 @@ import products from "../products";
 import ProductCard from "../ProductCard/ProductCard";
 import "./ProductGallery.css"
 
-const ProductGallery = () => {
+const AllProductGallery = () => {
     return(
         <div className="product__grid__container container top-margin">
-            {products.slice(0, 10).map((product) => (
+            {products.map((product) => (
                 <ProductCard 
                     key={product.id} 
                     src={product.src} 
@@ -18,4 +18,4 @@ const ProductGallery = () => {
     )
 }
 
-export default ProductGallery;
+export default AllProductGallery;
