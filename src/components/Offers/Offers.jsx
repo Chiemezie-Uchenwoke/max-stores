@@ -13,9 +13,11 @@ const Offers = () => {
     return (
         <section className="offers container top-margin">
             <div className="offers__inner">
-                {offerData.map((offer, index) => (
-                    <OfferCard key={index} {...offer} />
-                ))}
+                {offerData.map((offer, index) => {
+                    return (
+                        <OfferCard key={index} {...offer} />
+                    )
+                })}
             </div>
         </section>
     )
