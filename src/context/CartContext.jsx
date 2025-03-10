@@ -23,13 +23,13 @@ const CartProvider = ({ children }) => {
   useEffect(() => {
     if (!initialLoadDone.current) {
       const storedCartItems = localStorage.getItem("cartItems")
-      console.log("Stored cart items:", storedCartItems)
+      // console.log("Stored cart items:", storedCartItems)
       if (storedCartItems) {
         const parsedCartItems = JSON.parse(storedCartItems)
-        console.log("Parsed cart items:", parsedCartItems)
+        // console.log("Parsed cart items:", parsedCartItems)
         setCartItems(parsedCartItems)
         const newCartCount = parsedCartItems.reduce((total, item) => total + item.quantity, 0)
-        console.log("New cart count:", newCartCount)
+        // console.log("New cart count:", newCartCount)
         setCartCount(newCartCount)
       }
       initialLoadDone.current = true
