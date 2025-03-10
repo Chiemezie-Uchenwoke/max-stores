@@ -46,6 +46,7 @@
     padding: 1rem;
     border-bottom: 1px solid #eee;
     gap: 1rem;
+    margin-top: 1rem;
   }
   
   .item-image {
