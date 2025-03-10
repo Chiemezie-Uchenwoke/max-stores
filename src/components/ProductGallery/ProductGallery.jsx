@@ -8,6 +8,7 @@ const ProductGallery = () => {
             {products.slice(0, 10).map((product) => (
                 <ProductCard 
                     key={product.id} 
+                    id={product.id}
                     src={product.src} 
                     alt={product.alt}
                     price={product.price}

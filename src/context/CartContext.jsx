@@ -1,24 +1,117 @@
-import { useState, createContext } from "react";
-import PropTypes from 'prop-types';
+import { useState, createContext, useCallback } from "react"
+import PropTypes from "prop-types"
 
 const CartContext = createContext({
-    cartCount: 0,
-    setCartCount: () => {}
-});
-export {CartContext};
+  cartCount: 0,
+  setCartCount: () => {},
+  cartItems: [],
+  addToCart: () => {},
+  removeFromCart: () => {},
+  updateQuantity: () => {},
+  getTotalPrice: () => {},
+  isProductInCart: () => {},
+})
 
-const CartProvider = ({children}) => {
+export { CartContext }
 
-    const [cartCount, setCartCount] = useState(0)
+const CartProvider = ({ children }) => {
+  const [cartCount, setCartCount] = useState(0)
+  const [cartItems, setCartItems] = useState([])
 
-    return(
-        <CartContext.Provider value={{cartCount, setCartCount}} >
-            {children}
-        </CartContext.Provider>
-    )
+  // Add item to cart
+  const addToCart = useCallback((product) => {
+    setCartItems((prevItems) => {
+      const existingItemIndex = prevItems.findIndex((item) => item.id === product.id)
+
+      if (existingItemIndex !== -1) {
+        // If product exists, update quantity
+        const updatedItems = [...prevItems]
+        updatedItems[existingItemIndex].quantity += 1
+        return updatedItems
+      } else {
+        // If product doesn't exist, add it with quantity 1
+        return [...prevItems, { ...product, quantity: 1 }]
+      }
+    })
+
+    // Update total cart count
+    setCartCount((prevCount) => prevCount + 1)
+  }, [])
+
+  // Remove item from cart
+  const removeFromCart = useCallback((productId) => {
+    setCartItems((prevItems) => {
+      const existingItem = prevItems.find((item) => item.id === productId)
+
+      if (existingItem) {
+        // Decrease cart count by the quantity of the removed item
+        setCartCount((prevCount) => prevCount - existingItem.quantity)
+
+        // Remove the item from cart
+        return prevItems.filter((item) => item.id !== productId)
+      }
+      return prevItems
+    })
+  }, [])
+
+  // Update item quantity
+  const updateQuantity = useCallback(
+    (productId, newQuantity) => {
+      if (newQuantity <= 0) {
+        removeFromCart(productId)
+        return
+      }
+
+      setCartItems((prevItems) => {
+        return prevItems.map((item) => {
+          if (item.id === productId) {
+            // Update cart count based on quantity change
+            const quantityDifference = newQuantity - item.quantity
+            setCartCount((prevCount) => prevCount + quantityDifference)
+
+            return { ...item, quantity: newQuantity }
+          }
+          return item
+        })
+      })
+    },
+    [removeFromCart],
+  )
+
+  // Calculate total price
+  const getTotalPrice = useCallback(() => {
+    return cartItems.reduce((total, item) => total + item.price * item.quantity, 0)
+  }, [cartItems])
+
+  // Check if a product is in the cart
+  const isProductInCart = useCallback(
+    (productId) => {
+      return cartItems.some((item) => item.id === productId)
+    },
+    [cartItems],
+  )
+
+  return (
+    <CartContext.Provider
+      value={{
+        cartCount,
+        setCartCount,
+        cartItems,
+        addToCart,
+        removeFromCart,
+        updateQuantity,
+        getTotalPrice,
+        isProductInCart,
+      }}
+    >
+      {children}
+    </CartContext.Provider>
+  )
 }
-export default CartProvider;
+
+export default CartProvider
 
 CartProvider.propTypes = {
-    children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
 }
+

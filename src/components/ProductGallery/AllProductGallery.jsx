@@ -8,6 +8,7 @@ const AllProductGallery = () => {
             {products.map((product) => (
                 <ProductCard 
                     key={product.id} 
+                    id={product.id}
                     src={product.src} 
                     alt={product.alt}
                     price={product.price}
