@@ -19,6 +19,7 @@
   
   .cart-items {
     margin-bottom: 2rem;
+    height: 100%;
   }
 
   .cart-items button,
@@ -46,7 +47,7 @@
     padding: 1rem;
     border-bottom: 1px solid #eee;
     gap: 1rem;
-    margin-top: 1rem;
+    margin: 1rem 0;
   }
   
   .item-image {
@@ -103,8 +104,6 @@
   
   .item-total {
     font-weight: bold;
-    /* min-width: 80px; */
-    /* text-align: right; */
   }
   
   .remove-btn {
@@ -112,7 +111,6 @@
     border: none;
     color: #ff4d4d;
     cursor: pointer;
-    /* padding: 0.5rem; */
   }
   
   .remove-btn:hover {
@@ -123,7 +121,7 @@
     background-color: #f9f9f9;
     padding: 1.5rem;
     border-radius: 8px;
-    width: 100%;
+    align-self: flex-start;
   }
   
   .summary-row {
