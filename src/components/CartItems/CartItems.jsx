@@ -19,36 +19,42 @@ const CartItems = () => {
   }
 
   return (
-    <div className="cart-container">
+    <div className="cart-container container">
       <h2>Your Shopping Cart</h2>
 
       <div className="cart-items">
         {cartItems.map((item) => (
           <div key={item.id} className="cart-item">
-            <div className="item-image">
-              <img src={item.src || "/placeholder.svg"} alt={item.alt} />
+            <div className="f-p">
+                <div className="item-image">
+                    <img src={item.src || "/placeholder.svg"} alt={item.alt} />
+                </div>
+
+                <div className="item-details">
+                    <h3>{item.name}</h3>
+                    <p className="item-price">${item.price}</p>
+                </div>
             </div>
 
-            <div className="item-details">
-              <h3>{item.name}</h3>
-              <p className="item-price">${item.price}</p>
+            <div className="q-t">
+                <div className="item-quantity">
+                    <button onClick={() => updateQuantity(item.id, item.quantity - 1)} className="quantity-btn">
+                        <FaMinus />
+                    </button>
+
+                    <span>{item.quantity}</span>
+
+                    <button onClick={() => updateQuantity(item.id, item.quantity + 1)} className="quantity-btn">
+                        <FaPlus />
+                    </button>
+                </div>
+
+                <div className="item-total">${(item.price * item.quantity).toFixed(2)}</div>
+
+                <button onClick={() => removeFromCart(item.id)} className="remove-btn">
+                    <FaTrash />
+                </button>
             </div>
-
-            <div className="item-quantity">
-              <button onClick={() => updateQuantity(item.id, item.quantity - 1)} className="quantity-btn">
-                <FaMinus />
-              </button>
-              <span>{item.quantity}</span>
-              <button onClick={() => updateQuantity(item.id, item.quantity + 1)} className="quantity-btn">
-                <FaPlus />
-              </button>
-            </div>
-
-            <div className="item-total">${(item.price * item.quantity).toFixed(2)}</div>
-
-            <button onClick={() => removeFromCart(item.id)} className="remove-btn">
-              <FaTrash />
-            </button>
           </div>
         ))}
       </div>

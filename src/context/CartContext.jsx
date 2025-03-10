@@ -1,4 +1,4 @@
-import { useState, createContext, useCallback } from "react"
+import { useState, createContext, useCallback, useEffect, useRef } from "react"
 import PropTypes from "prop-types"
 
 const CartContext = createContext({
@@ -17,9 +17,36 @@ export { CartContext }
 const CartProvider = ({ children }) => {
   const [cartCount, setCartCount] = useState(0)
   const [cartItems, setCartItems] = useState([])
+  const initialLoadDone = useRef(false)
+
+  // Load cart data from localStorage on initial render
+  useEffect(() => {
+    if (!initialLoadDone.current) {
+      const storedCartItems = localStorage.getItem("cartItems")
+      console.log("Stored cart items:", storedCartItems)
+      if (storedCartItems) {
+        const parsedCartItems = JSON.parse(storedCartItems)
+        console.log("Parsed cart items:", parsedCartItems)
+        setCartItems(parsedCartItems)
+        const newCartCount = parsedCartItems.reduce((total, item) => total + item.quantity, 0)
+        console.log("New cart count:", newCartCount)
+        setCartCount(newCartCount)
+      }
+      initialLoadDone.current = true
+    }
+  }, [])
+
+  // Save cart data to localStorage whenever it changes
+  useEffect(() => {
+    if (initialLoadDone.current) {
+      console.log("Saving cart items:", cartItems)
+      localStorage.setItem("cartItems", JSON.stringify(cartItems))
+    }
+  }, [cartItems])
 
   // Add item to cart
   const addToCart = useCallback((product) => {
+    console.log("Adding to cart:", product)
     setCartItems((prevItems) => {
       const existingItemIndex = prevItems.findIndex((item) => item.id === product.id)
 
@@ -40,6 +67,7 @@ const CartProvider = ({ children }) => {
 
   // Remove item from cart
   const removeFromCart = useCallback((productId) => {
+    console.log("Removing from cart:", productId)
     setCartItems((prevItems) => {
       const existingItem = prevItems.find((item) => item.id === productId)
 
@@ -57,6 +85,7 @@ const CartProvider = ({ children }) => {
   // Update item quantity
   const updateQuantity = useCallback(
     (productId, newQuantity) => {
+      console.log("Updating quantity:", productId, newQuantity)
       if (newQuantity <= 0) {
         removeFromCart(productId)
         return
