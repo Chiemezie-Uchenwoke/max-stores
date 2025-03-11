@@ -11,6 +11,10 @@
 .cart-container {
     margin: 2rem auto;
   }
+
+  .cart-empty-cont{
+    height: 100vh;
+  }
   
   .cart-empty {
     text-align: center;
