@@ -4,6 +4,7 @@ import HomePage from "./components/pages/HomePage";
 import Products from './components/pages/Products';
 import Cart from "./components/pages/Cart";
 import SignIn from "./components/pages/SignIn";
+import SignUp from './components/pages/SignUp';
 import { Routes, Route } from 'react-router-dom';
 import NotFound from './components/pages/NotFound';
 
@@ -17,6 +18,7 @@ function App() {
         <Route path="/products" element={<Products />}></Route>
         <Route path="/cart" element={<Cart />}></Route>
         <Route path="/signin" element={<SignIn />}></Route>
+        <Route path="/signup" element={<SignUp />}></Route>
         <Route path="*" element={<NotFound />}></Route>
       </Routes> 
     </>

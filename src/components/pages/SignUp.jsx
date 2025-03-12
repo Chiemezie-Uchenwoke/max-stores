@@ -1,14 +1,14 @@
 import Header from "../Header/Header";
-import Login from "../Auth/SignIn";
+import Register from "../Auth/SignUp";
 import Footer from "../Footer/Footer";
 
-const SignIn = () => {
+const SignUp = () => {
     return(
         <>
             <Header />
-            <Login />
+            <Register />
             <Footer />
         </>
     )
 }
-export default SignIn;
+export default SignUp;

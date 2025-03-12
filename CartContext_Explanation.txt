@@ -1,5 +1,13 @@
 CartContext Explanation
 
+NOTE: 
+&apos; is an HTML entity that represents an apostrophe (').
+
+Why use &apos;?
+Some special characters, like the apostrophe ('), can conflict with HTML and JSX syntax. Using &apos; ensures the apostrophe is correctly displayed without causing errors.
+
+
+
 This document provides a detailed explanation of the CartContext implementation in our React project.
 
 1. Imports and Context Creation:
