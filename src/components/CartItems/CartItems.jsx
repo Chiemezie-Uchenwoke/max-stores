@@ -1,12 +1,27 @@
 import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
-import { Link } from "react-router-dom";
+import { AuthContext } from "../../context/AuthContext";
+import { Link, useNavigate } from "react-router-dom";
 import { FaTrash, FaMinus, FaPlus } from "react-icons/fa";
 import "./CartItem.css";
 
 const CartItems = () => {
   const { cartItems, removeFromCart, updateQuantity, getTotalPrice } =
     useContext(CartContext);
+  const { userLoggedIn } = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  const handleCheckout = () => {
+    if (!userLoggedIn) {
+      // Redirect to sign in page
+      navigate("/signin");
+    } else {
+      // Proceed with checkout
+      console.log("Proceeding to checkout");
+      // Here you would redirect to a checkout page or process the order
+      navigate("/checkout");
+    }
+  };
 
   if (cartItems.length === 0) {
     return (
@@ -87,7 +102,9 @@ const CartItems = () => {
             <span>${getTotalPrice().toFixed(2)}</span>
           </div>
 
-          <button className="checkout-btn">Proceed to Checkout</button>
+          <button className="checkout-btn" onClick={handleCheckout}>
+            {userLoggedIn ? "Proceed to Checkout" : "Sign in to Checkout"}
+          </button>
 
           <Link to="/products" className="continue-shopping">
             Continue Shopping
