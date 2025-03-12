@@ -17,7 +17,7 @@ const CartItems = () => {
       navigate("/signin");
     } else {
       // Proceed with checkout
-      console.log("Proceeding to checkout");
+      // console.log("Proceeding to checkout");
       // Here you would redirect to a checkout page or process the order
       navigate("/checkout");
     }
