@@ -68,38 +68,38 @@ const MobileHeader = () => {
                   </Link>
                   
                   {userLoggedIn ? (
-                            <div className="user-profile-container" ref={dropdownRef}>
-                                <div 
-                                    className="user-profile" 
-                                    onClick={() => setDropdownOpen(!dropdownOpen)}
-                                >
-                                    {currentUser?.photoURL ? (
-                                        <img 
-                                            src={currentUser.photoURL || "/placeholder.svg"} 
-                                            alt="User" 
-                                            className="user-avatar" 
-                                        />
-                                    ) : (
-                                        <FaUser className="user-icon" />
-                                    )}
-                                    <span className="user-name">
-                                        {currentUser?.displayName?.split(' ')[0] || 'User'}
-                                    </span>
-                                    <FaCaretDown className="dropdown-icon" />
-                                </div>
-                                
-                                {dropdownOpen && (
-                                    <div className="user-dropdown">
-                                        <button onClick={handleSignOut} className="signout-button">
-                                            <FaSignOutAlt className="signout-icon" />
-                                            Sign Out
-                                        </button>
-                                    </div>
-                                )}
+                    <div className="user-profile-container" ref={dropdownRef}>
+                        <div 
+                            className="user-profile" 
+                            onClick={() => setDropdownOpen(!dropdownOpen)}
+                        >
+                            {currentUser?.photoURL ? (
+                                <img 
+                                    src={currentUser.photoURL || "/placeholder.svg"} 
+                                    alt="User" 
+                                    className="user-avatar" 
+                                />
+                            ) : (
+                                <FaUser className="user-icon" />
+                            )}
+                            <span className="user-name">
+                                {currentUser?.displayName?.split(' ')[0] || 'User'}
+                            </span>
+                            <FaCaretDown className="dropdown-icon" />
+                        </div>
+                          
+                        {dropdownOpen && (
+                            <div className="user-dropdown">
+                                <button onClick={handleSignOut} className="signout-button">
+                                    <FaSignOutAlt className="signout-icon" />
+                                    Sign Out
+                                </button>
                             </div>
-                        ) : (
-                            <Link to="/signin" className="nav-item">sign in</Link>
                         )}
+                  </div>
+                 ) : (
+                     <Link to="/signin" className="nav-item">sign in</Link>
+                 )}
               </div>
             </div>
           </div>
