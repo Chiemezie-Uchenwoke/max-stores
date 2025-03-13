@@ -120,6 +120,13 @@ const CartProvider = ({ children }) => {
     [cartItems],
   )
 
+  const clearCart = useCallback(() => {
+    setCartItems([]);
+    setCartCount(0);
+    localStorage.removeItem("cartItems");
+    console.log("Cart cleared from context");
+  }, []);
+
   return (
     <CartContext.Provider
       value={{
@@ -131,6 +138,7 @@ const CartProvider = ({ children }) => {
         updateQuantity,
         getTotalPrice,
         isProductInCart,
+        clearCart,
       }}
     >
       {children}

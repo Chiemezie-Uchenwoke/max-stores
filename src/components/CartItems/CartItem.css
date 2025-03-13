@@ -181,6 +181,31 @@
     justify-content: space-between;
     gap: 2rem;
   }
+
+  .thank-you-container{
+    min-height: 100vh;
+    margin-top: 2.5rem;
+  }
+
+  .thank-you{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 0 auto;
+  }
+
+  .check-icon{
+    font-size: 1.5rem;
+  }
+
+  .thank-you-message{
+    text-align: center;
+  }
+
+  .back-to-products{
+    color: var(--pri-color);
+    text-decoration: underline;
+  }
   
   @media (max-width: 900px) {
     .cart-item {

@@ -1,37 +1,77 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { CartContext } from "../../context/CartContext";
 import { AuthContext } from "../../context/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
-import { FaTrash, FaMinus, FaPlus } from "react-icons/fa";
+import { FaTrash, FaMinus, FaPlus, FaCheckCircle } from "react-icons/fa";
 import "./CartItem.css";
 
 const CartItems = () => {
-  const { cartItems, removeFromCart, updateQuantity, getTotalPrice } =
+  const { cartItems, removeFromCart, updateQuantity, getTotalPrice, clearCart } =
     useContext(CartContext);
-  const { userLoggedIn } = useContext(AuthContext);
+  const { userLoggedIn, currentUser } = useContext(AuthContext);
   const navigate = useNavigate();
+  const [purchaseComplete, setPurchaseComplete] = useState(false);
 
   const handleCheckout = () => {
     if (!userLoggedIn) {
       // Redirect to sign in page
       navigate("/signin");
     } else {
-      // Proceed with checkout
-      // console.log("Proceeding to checkout");
-      // Here you would redirect to a checkout page or process the order
-      navigate("/checkout");
+      // Show thank you message and clear cart
+      setPurchaseComplete(true);
+      
+      // Clear cart after 3 seconds
+      setTimeout(() => {
+        console.log("Before clearing cart:", cartItems);
+
+        clearCart();
+        console.log("After clearing cart state");
+
+        // Reset purchase complete state after another 2 seconds
+        setTimeout(() => {
+          setPurchaseComplete(false);
+        }, 2000);
+      }, 3000);
     }
   };
+
+  // Thank you message component
+  const ThankYouMessage = () => (
+    <div className="thank-you-container container">
+      <div className="thank-you-message">
+        
+        <h2>Thank You for Your Purchase <FaCheckCircle className="check-icon" /></h2>
+        <p>Your order has been received and is being processed.</p>
+        {currentUser && (
+          <p className="customer-email">
+            A confirmation email will be sent to {currentUser.email}
+          </p>
+        )}
+        <div className="order-processing">
+          <div className="processing-indicator">
+            <div className="processing-bar"></div>
+          </div>
+          <Link to="/products" className="back-to-products">
+            Continue Shopping
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+
+  if (purchaseComplete) {
+    return <ThankYouMessage />;
+  }
 
   if (cartItems.length === 0) {
     return (
       <div className="cart-empty-cont">
-          <div className="cart-empty">
-            <h2>Your cart is empty</h2>
-            <Link to="/products" className="continue-shopping">
-              Continue Shopping
-            </Link>
-          </div>
+        <div className="cart-empty">
+          <h2>Your cart is empty</h2>
+          <Link to="/products" className="continue-shopping">
+            Continue Shopping
+          </Link>
+        </div>
       </div>
     );
   }
@@ -103,7 +143,7 @@ const CartItems = () => {
           </div>
 
           <button className="checkout-btn" onClick={handleCheckout}>
-            {userLoggedIn ? "Proceed to Checkout" : "Sign in to Checkout"}
+            {userLoggedIn ? "Complete Purchase" : "Sign in to Checkout"}
           </button>
 
           <Link to="/products" className="continue-shopping">
