@@ -39,14 +39,14 @@ const CartProvider = ({ children }) => {
   // Save cart data to localStorage whenever it changes
   useEffect(() => {
     if (initialLoadDone.current) {
-      console.log("Saving cart items:", cartItems)
+      // console.log("Saving cart items:", cartItems)
       localStorage.setItem("cartItems", JSON.stringify(cartItems))
     }
   }, [cartItems])
 
   // Add item to cart
   const addToCart = useCallback((product) => {
-    console.log("Adding to cart:", product)
+    // console.log("Adding to cart:", product)
     setCartItems((prevItems) => {
       const existingItemIndex = prevItems.findIndex((item) => item.id === product.id)
 
@@ -67,7 +67,7 @@ const CartProvider = ({ children }) => {
 
   // Remove item from cart
   const removeFromCart = useCallback((productId) => {
-    console.log("Removing from cart:", productId)
+    // console.log("Removing from cart:", productId)
     setCartItems((prevItems) => {
       const existingItem = prevItems.find((item) => item.id === productId)
 
