@@ -1,6 +1,7 @@
 import "./Hero.css";
-import orange from "../../assets/orange.png";
-import cart from "../../assets/cart1.png";
+// import orange from "../../assets/orange.png";
+import sneakers from "../../assets/sneakers.png";
+import cart from "../../assets/cart6.png";
 import { Link } from "react-router-dom";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 
@@ -24,7 +25,7 @@ const Hero = () => {
                 </div>
 
                 <div className="orange">
-                    <img src={orange} alt="Image of an orange"/>
+                    <img src={sneakers} alt="Image of an orange"/>
                 </div>
             </div>
         </section>
