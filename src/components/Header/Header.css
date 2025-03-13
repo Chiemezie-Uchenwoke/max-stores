@@ -181,14 +181,14 @@
   gap: 0.5rem;
 }
 
-.user-profile-container{
+/* .user-profile-container{
   position: relative;
-}
+} */
 
 .user-dropdown{
   position: absolute;
-  right: 1rem;
-  /* top: 3rem; */
+  right: 4rem;
+  top: 5rem;
 }
 
 .signout-button{
@@ -197,7 +197,7 @@
   gap: 0.5rem;
   padding: 0.3rem 1rem;
   cursor: pointer;
-  width: fit-content;
+  
 }
 
 .dropdown-icon,
@@ -214,6 +214,7 @@
         display: flex;
         align-items: center;
         gap: 2rem;
+        position: relative;
     }
 
     .nav-links a{
@@ -261,5 +262,10 @@
 
     .user-profile{
       gap: 1rem;
+    }
+
+    .user-dropdown{
+      right: 0;
+      top: 2.5rem;
     }
   }
