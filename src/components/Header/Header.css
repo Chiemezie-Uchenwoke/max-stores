@@ -199,6 +199,11 @@
   cursor: pointer;
 }
 
+.dropdown-icon,
+.user-name{
+  cursor: pointer;
+}
+
   @media (min-width: 1000px){
     .mobile{
         display: none;
