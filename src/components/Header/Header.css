@@ -176,6 +176,7 @@
 
     .nav-links{
         display: flex;
+        align-items: center;
         gap: 2rem;
     }
 
@@ -215,5 +216,34 @@
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+
+    .user-avatar{
+      width: 3rem;
+      height: 3rem;
+      border-radius: 50%;
+    }
+
+    .user-profile{
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .user-profile-container{
+      position: relative;
+    }
+
+    .user-dropdown{
+      position: absolute;
+      right: 0;
+    }
+
+    .signout-button{
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.3rem 1rem;
+      cursor: pointer;
     }
   }
