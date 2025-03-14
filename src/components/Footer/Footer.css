@@ -42,9 +42,9 @@ footer li:hover{
 footer .footer_inner{
     display: grid;
     grid-template-columns: 1fr;
-    gap: 1rem;
-    /* justify-content: flex-start; */
+    gap: 2.3rem;
 }
+
 
 footer .footer_inner > div:nth-child(1){
     display: flex;
