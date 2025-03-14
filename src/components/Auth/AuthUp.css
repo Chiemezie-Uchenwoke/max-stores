@@ -1,13 +1,3 @@
-:root{
-    --pri-color: #ff4e72;
-    --sec-color: #99e763;
-    --white-color: #f6f6f6;
-    --shade-of-black: #1a1a1a;
-    --deep-dark: #121212;
-    --teal: #2E5077;
-    --acc-color-dark: #1E3E62;
-}
-
 .register{
     margin: 4rem auto;
     border: 1px solid rgba(0, 0, 0, 0.1);
