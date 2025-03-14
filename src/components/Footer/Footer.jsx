@@ -29,13 +29,16 @@ const Footer = () => {
                     <li><Link className="footer-nav" to="/signin">signin</Link></li>
                 </ul>
 
-                <div className="socials">
-                    <button><FaFacebookF /></button>
-                    <button><FaInstagram /></button>
-                    <button><FaTiktok /></button>
-                    <button><FaYoutube /></button>
-                    <button><FaPinterestP /></button>
-                    <button><FaXTwitter /></button>
+                <div>
+                    <h2>connect with us</h2>
+                    <div className="socials">
+                        <button><FaFacebookF /></button>
+                        <button><FaInstagram /></button>
+                        <button><FaTiktok /></button>
+                        <button><FaYoutube /></button>
+                        <button><FaPinterestP /></button>
+                        <button><FaXTwitter /></button>
+                    </div>
                 </div>
             </div>
         </footer>
