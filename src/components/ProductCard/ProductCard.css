@@ -51,7 +51,7 @@
 
 .product-description button:hover{
     filter: brightness(0.95);
-    background-color: gold;
+    background-color: rgba(18, 18, 18, 0.1);
     border: 1px solid rgba(18, 18, 18, 0.1);
 }
 
