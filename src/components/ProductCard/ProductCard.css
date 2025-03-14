@@ -41,7 +41,7 @@
 }
 
 .product-description button{
-    border: 1px solid var(--deep-dark);
+    border: 1px solid rgba(18, 18, 18, 0.6);
     /* background-color: var(--acc-color-dark); */
     background: none;
     padding: 0.4rem 1.1rem;
