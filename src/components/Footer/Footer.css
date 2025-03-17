@@ -69,11 +69,17 @@ footer button{
     background: none;
     color: var(--white-color);
     width: fit-content;
+    transition: 0.3s ease-in-out;
 }
 
 footer li:hover,
 footer button:hover {
     cursor: pointer;
+}
+
+footer button:hover{
+    scale: 1.05;
+    filter: brightness(0.8);
 }
 
 @media (min-width: 600px){
