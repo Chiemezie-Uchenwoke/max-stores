@@ -22,10 +22,10 @@ const CartItems = () => {
       
       // Clear cart after 3 seconds
       setTimeout(() => {
-        console.log("Before clearing cart:", cartItems);
+        // console.log("Before clearing cart:", cartItems);
 
         clearCart();
-        console.log("After clearing cart state");
+        // console.log("After clearing cart state");
 
         // Reset purchase complete state after another 2 seconds
         setTimeout(() => {
