@@ -1,6 +1,7 @@
 import { auth } from "./config";
 import {
     createUserWithEmailAndPassword,
+    signOut,
     signInWithEmailAndPassword,
     sendPasswordResetEmail,
     sendEmailVerification,
@@ -27,7 +28,7 @@ import {
   };
   
   export const doSignOut = () => {
-    return auth.signOut();
+    return signOut(auth);
   };
   
   export const doPasswordReset = (email) => {
